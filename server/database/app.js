@@ -1,10 +1,10 @@
+/*jshint esversion: 8 */
 const express = require('express');
 const mongoose = require('mongoose');
 const fs = require('fs');
 const  cors = require('cors')
 const app = express()
 const port = 3030;
-
 app.use(cors())
 app.use(require('body-parser').urlencoded({ extended: false }));
 
