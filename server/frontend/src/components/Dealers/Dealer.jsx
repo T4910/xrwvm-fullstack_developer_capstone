@@ -1,12 +1,12 @@
-import React, { useState,useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import "./Dealers.css";
+import negative_icon from "../assets/negative.png";
+import neutral_icon from "../assets/neutral.png";
+import positive_icon from "../assets/positive.png";
+import review_icon from "../assets/reviewbutton.png";
 import "../assets/style.css";
-import positive_icon from "../assets/positive.png"
-import neutral_icon from "../assets/neutral.png"
-import negative_icon from "../assets/negative.png"
-import review_icon from "../assets/reviewbutton.png"
 import Header from '../Header/Header';
+import "./Dealers.css";
 
 const Dealer = () => {
 
@@ -80,6 +80,7 @@ return(
       ):  unreviewed === true? <div>No reviews yet! </div> :
       reviews.map(review => (
         <div className='review_panel'>
+          {/* {`Rating: ${JSON.parse(review)}`} */}
           <img src={senti_icon(review.sentiment)} className="emotion_icon" alt='Sentiment'/>
           <div className='review'>{review.review}</div>
           <div className="reviewer">{review.name} {review.car_make} {review.car_model} {review.car_year}</div>
